@@ -6,6 +6,20 @@
 .bg-umine{
     background-color: var(--primary-color);
 }
+.bg-umine-image{
+    background-color: var(--primary-color);
+    background-image: url('img/bgImageLogin.png');
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.text-umine-secondary{
+    color: var(--secondary-color)!important;
+}
+.text-umine-primary{
+    color: var(--primary-color)!important;
+}
+
 
 .btn-secondary{
     background-color: var(--secondary-color)!important;
