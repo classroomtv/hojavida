@@ -52,16 +52,10 @@ export default {
                 verifiesPassword: '',
             },
             urlParam: this.$route.query.urlParam,
-            
+
         }
     },
     methods: {
-
-
-        isHashValid() {
-            
-        },
-
 
         RegisterAction() {
             console.log(this.$URLParams('hash'));
@@ -72,12 +66,10 @@ export default {
             formdata.append("name", this.registerdata.fist_name);
             formdata.append("password", this.registerdata.pass);
             formdata.append("password_confirmation", this.registerdata.verifiesPassword);
-            formdata.append("lms_id", "456978");
-            formdata.append("institution_id", "826");
+            formdata.append("hash", this.$URLParams('hash'));
             formdata.append("client_id", "3");
             formdata.append("client_secret", "pU9VyoBsRdUcULaou0MDNLb18KSdArs8SLAGJGWG");
-            formdata.append("last_name", "Jauregui");
-            formdata.append("dni", "19017728-9");
+            formdata.append("last_name", this.registerdata.last_name);
             formdata.append("avatar", "https://example.com/image.jpg");
             var requestOptions = {
                 method: 'POST',
