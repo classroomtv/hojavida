@@ -8,9 +8,12 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.6",
     "nuxt": "^3.0.0"
   },
   "dependencies": {
+    "@mdi/font": "^7.1.96",
+    "@nuxtjs/i18n": "^7.3.0",
     "bootstrap": "^5.2.3",
     "sweetalert2": "^11.6.15"
   }
