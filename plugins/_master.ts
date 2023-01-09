@@ -19,6 +19,17 @@ export default defineNuxtPlugin(({app, store}) => {
         return returnLang;
     }
 
+    const URLParams = (key:any) => {
+        let qs = document.location.search.split('+').join(' ');
+        let params:any = {},
+            tokens,
+            re = /[?&]?([^=]+)=([^&]*)/g;
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+        }
+        return params[key];
+    }
+
     const changeLang = (setLang:any) => {
         userLang = setLang;
         console.log(userLang);
@@ -33,6 +44,7 @@ export default defineNuxtPlugin(({app, store}) => {
         provide: {
             t,
             showMessage,
+            URLParams,
         }
     }
 })
