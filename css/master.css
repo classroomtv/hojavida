@@ -1,16 +1,53 @@
 :root{
     --primary-color: #1E2A4D;
     --secondary-color: #585F9E;
+    --tertiary-color: #1AAEDF;
+    --developer-color: #00799A;
+    --gray-color: #F7F7FA;
+    --gray-color-text: #BABECF;
+    --green-umine: #86B722;
+    --danger-color: #E03728;
+    --dimgray-color-text: #646464;
 }
 
 .bg-umine{
-    background-color: var(--primary-color);
+    background-color: var(--primary-color)!important;
 }
+
+.bg-umine-secondary{
+    background-color: var(--secondary-color);
+}
+
+
+.bg-gray{
+    background-color: var(--gray-color)!important;
+}
+
+.yearCircle{
+    width: 56px;
+    height: 56px;
+    background-color: white;
+    border: 2px solid var(--tertiary-color)!important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 56px;
+}
+
 .bg-umine-image{
     background-color: var(--primary-color);
-    background-image: url('img/bgImageLogin.png');
+    background-image: url('/img/bgImageLogin.png');
     background-size: auto;
     background-repeat: no-repeat;
+}
+
+.bg-umine-developing{
+    background-color: var(--developer-color);
+}
+
+.bg-umine-green {
+    background-color: var(--green-umine);
 }
 
 .text-umine-secondary{
@@ -20,8 +57,81 @@
     color: var(--primary-color)!important;
 }
 
+.text-umine-danger{
+    color: var(--danger-color) !important;
+}
+
+.text-umine-dimgray{
+    color: var(--dimgray-color-text) !important;
+}
+.text-umine-gray{
+    color: var(--gray-color-text)!important;
+}
 
 .btn-secondary{
     background-color: var(--secondary-color)!important;
     border:1px solid var(--secondary-color)!important;
+}
+
+.listDecorationBefore{
+    padding-left: 20px;
+}
+.listDecorationBefore::before{
+    content: '';
+    position: absolute;
+    margin-left: -12px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 6px;
+    height: 6px;
+    background-color: #aaaaaa;
+}
+
+.bottomMenu{
+    font-size: 16px!important;
+}
+
+
+.experienceDecorationLeft{
+    border-left: 3px solid var(--tertiary-color);
+    padding-top: 20px;
+}
+
+.experienceDecorationLeft .yearCircle{
+    position: relative;
+    left: -5%;
+}
+
+.experienceDecorationLeft::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--tertiary-color);
+    position: absolute;
+    margin-left: -11px;
+    margin-top: -20px;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+hr{
+    border-top: 1px solid var(--secondary-color)!important;
+    opacity: 1!important;
+}
+hr.gray{
+    border-top: 1px solid #DEE2E6 !important;
+    opacity: 1 !important;
+}
+
+.icon-24{
+    font-size: 24px!important;
+}
+.icon-32 {
+    font-size: 32px !important;
+}
+.icon-64 {
+    font-size: 64px !important;
 }

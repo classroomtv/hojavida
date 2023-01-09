@@ -14,5 +14,15 @@ export default function translation_es (){
         "Email": "Email",
         "Fono": "Teléfono",
         "SobreMi": "Sobre mi",
+        "expLaboral": "Experiencia laboral",
+        "expTraining": "Capacitación",
+        "date_init": "Desde",
+        "date_end": "Hasta",
+        "functions": "Funciones",
+        "objetives": "Objetivos",
+        "competences": "Competencias",
+        "developing": "En desarrollo",
+        "developed": "Desarrollado",
+        "expert": "Experto",
     }
 }

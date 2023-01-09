@@ -3,7 +3,7 @@
        <div class="row">
             <div class="col-12">
                 <div class="col-10 offset-1 col-md-4 mt-5 pt-5">
-                    <img src="img/logowhite.png" class="img-fluid mt-5" alt="">
+                    <CommonsUmineImg url="img/logowhite.png" className="img-fluid mt-5" alt=""/>
                     <p class="text-white float-end">{{ $t('hojadevida') }}</p>
                 </div>
                 <div class="col-10 offset-1 col-md-4 mt-5 text-center">
@@ -28,14 +28,39 @@
         data() {
             return {
                 accessData: {
-                    user:'',
-                    pass:'',
+                    user:'fake10user@algo.com',
+                    pass:'9871238898',
                 }
             }
         },
         methods:{
-            LogInAction(){
-                window.location = '/home';
+            LogInAction() {
+
+                var formdata = new FormData();
+                formdata.append("grant_type", "password");
+                formdata.append("username", this.accessData.user);
+                formdata.append("password", this.accessData.pass);
+                formdata.append("client_id", "3");
+                formdata.append("client_secret", "pU9VyoBsRdUcULaou0MDNLb18KSdArs8SLAGJGWG");
+
+                var requestOptions = {
+                    method: 'POST',
+                    body: formdata,
+                    redirect: 'follow'
+                };
+                fetch("http://127.0.0.1:8000/oauth/token", requestOptions)
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.access_token != undefined) {
+                            localStorage.setItem('token', result.access_token);
+                            this.$router.push('/home');
+                        } else {
+                            alert('Usuario o contraseña incorrectos');
+                        }
+                    }
+
+                    )
+                    .catch(error => console.log('error', error));
             }
         }
     }
